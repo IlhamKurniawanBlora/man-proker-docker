@@ -1,0 +1,7 @@
+RewriteEngine On
+
+# Arahkan semua ke public/index.php jika bukan file/folder asli
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
